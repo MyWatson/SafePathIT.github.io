@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- ============================================
+     SafePath IT - Landing Page
+     Managed IT Services for Las Vegas SMBs
+     ============================================ -->
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SafePath IT — Managed IT & Microsoft 365 for Las Vegas SMBs</title>
+  <meta name="description" content="SafePath IT provides focused MSP services for Las Vegas small and mid‑sized businesses: Microsoft 365 management, light security assessments, proactive monitoring, and 24/7 response." />
+  <meta property="og:title" content="SafePath IT — Managed IT for Las Vegas SMBs" />
+  <meta property="og:description" content="MSP services, Microsoft 365 admin, security checkups, monitoring, and 24/7 response. Locally focused on Las Vegas." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='630'><rect width='100%' height='100%' fill='%23121a24'/><text x='50%' y='54%' dominant-baseline='middle' text-anchor='middle' fill='white' font-family='Segoe UI, Roboto, Arial' font-size='64'>SafePath IT</text></svg>" />
+  <!-- ========== MAIN CSS STYLES START ========== -->
+  <style>
+    /* ---------- CSS VARIABLES ----------
+       Define color scheme and design tokens for consistent theming */
+    :root {
+      --bg: #0e141b;
+      --bg-alt: #111923;
+      --text: #ebf2ff;
+      --muted: #b7c6e6;
+      --brand: #4fd1c5; /* teal */
+      --brand-2: #f59e0b; /* sun (vegas desert) */
+      --card: #0f1720;
+      --accent: #8b5cf6; /* tech purple */
+      --ok: #22c55e;
+      --warn: #fbbf24;
+      --danger: #ef4444;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 18px;
+    }
+    
+    /* ---------- GLOBAL RESET & BASE STYLES ---------- */
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, "Helvetica Neue", Arial, system-ui, sans-serif; }
+    img { max-width: 100%; display: block; }
+    a { color: var(--brand); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { width: min(1120px, 92vw); margin: 0 auto; }
+    
+    /* ---------- HEADER & NAVIGATION STYLES ---------- */
+    header { position: sticky; top: 0; backdrop-filter: blur(10px); background: rgba(14,20,27,0.6); border-bottom: 1px solid rgba(255,255,255,0.06); z-index: 10; }
+    nav { display: flex; align-items: center; justify-content: space-between; padding: 12px 0; }
+    .logo { display: inline-flex; align-items: center; gap: 12px; }
+    .logo svg { height: 36px; width: auto; filter: drop-shadow(0 2px 6px rgba(0,0,0,.35)); }
+    .logo span { font-weight: 700; letter-spacing: .4px; font-size: 18px; }
+    .nav-links { display: flex; gap: 22px; font-weight: 500; }
+    
+    /* ---------- BUTTON STYLES ---------- */
+    .btn { display: inline-flex; align-items: center; justify-content: center; padding: 12px 16px; border-radius: 12px; background: var(--brand); color: #0a0f14; font-weight: 700; letter-spacing: .3px; box-shadow: var(--shadow); border: 0; cursor: pointer; }
+    .btn:hover { transform: translateY(-1px); }
+    .btn.outline { background: transparent; color: var(--text); border: 1px solid rgba(255,255,255,0.16); }
+
+    /* ---------- HERO SECTION STYLES ----------
+       Main banner area with company tagline and CTAs */
+    .hero { position: relative; overflow: hidden; padding: 84px 0 54px; background: radial-gradient(1200px 400px at 50% -10%, rgba(79,209,197,.25), transparent 60%), linear-gradient(180deg, #0f1822 0%, #0e141b 50%); }
+    .hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 36px; align-items: center; }
+    .badge { display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 999px; background: rgba(255,255,255,0.08); color: var(--muted); font-weight: 600; font-size: 13px; }
+    h1 { font-size: clamp(34px, 5vw, 56px); line-height: 1.05; margin: 14px 0 12px; }
+    .lead { color: var(--muted); font-size: 18px; line-height: 1.6; }
+    .cta { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 18px; }
+
+    /* Vegas skyline / desert SVG background - REMOVED to fix content overlay */
+    /* .vegas-bg { position: absolute; inset: auto 0 0 0; height: 220px; pointer-events: none; opacity: .9; } */
+
+    /* ---------- GENERAL SECTION STYLES ---------- */
+    section { padding: 72px 0; border-top: 1px solid rgba(255,255,255,0.06); }
+    h2 { font-size: clamp(26px, 3.2vw, 36px); margin-top: 0; }
+    .cards { display: grid; grid-template-columns: repeat( auto-fit, minmax(240px, 1fr) ); gap: 18px; margin-top: 18px; }
+    .card { background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02)); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius); padding: 18px; box-shadow: var(--shadow); }
+    .card h3 { margin: 8px 0 8px; font-size: 18px; }
+    .card p { color: var(--muted); margin: 0; font-size: 15px; line-height: 1.55; }
+    .tag { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: .4px; color: #081015; background: var(--brand); padding: 6px 10px; border-radius: 999px; }
+
+    /* ---------- VEGAS STACK SECTION STYLES ---------- */
+    .stack { display: grid; grid-template-columns: 1.1fr 1fr; gap: 24px; align-items: start; }
+    .kicker { color: var(--brand-2); font-weight: 800; font-size: 12px; letter-spacing: .5px; text-transform: uppercase; }
+    .list { display: grid; gap: 10px; margin-top: 10px; }
+    .list li { list-style: none; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); padding: 12px 14px; border-radius: 12px; }
+    .list strong { color: white; }
+
+    /* ---------- ABOUT SECTION STYLES ---------- */
+    .about { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+
+    /* ---------- CONTACT SECTION & FORM STYLES ---------- */
+    .contact { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; align-items: center; }
+    .contact form { background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02)); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius); padding: 18px; box-shadow: var(--shadow); }
+    label { font-weight: 600; font-size: 14px; display: block; margin: 12px 0 6px; }
+    input, textarea { width: 100%; background: #0b1117; color: var(--text); border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; padding: 12px 14px; font: inherit; }
+    textarea { min-height: 120px; resize: vertical; }
+
+    /* ---------- FOOTER STYLES ---------- */
+    footer { padding: 26px 0 40px; color: var(--muted); text-align: center; border-top: 1px solid rgba(255,255,255,0.06); }
+    .small { font-size: 12px; color: var(--muted); }
+
+    /* ---------- MOBILE RESPONSIVE STYLES ---------- */
+    @media (max-width: 900px){
+      .hero-grid, .stack, .about, .contact { grid-template-columns: 1fr; }
+    }
+  </style>
+  <!-- ========== MAIN CSS STYLES END ========== -->
+</head>
+<body>
+  <!-- ========== HEADER/NAVIGATION BAR START ========== -->
+  <!-- Sticky navigation with logo and menu links -->
+  <header>
+    <div class="container">
+      <nav>
+        <a href="#top" class="logo" aria-label="SafePath IT home">
+          <!-- Simple SVG mark: desert road + circuit traces forming an S -->
+          <svg viewBox="0 0 144 144" role="img" aria-label="SafePath IT logo">
+            <defs>
+              <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#4fd1c5"/>
+                <stop offset="100%" stop-color="#8b5cf6"/>
+              </linearGradient>
+            </defs>
+            <rect width="144" height="144" rx="28" fill="#0c131a" />
+            <path d="M18 102c30-26 60-3 78-24 8-9 8-21-1-27-23-16-59 12-72-3" fill="none" stroke="url(#g)" stroke-width="10" stroke-linecap="round"/>
+            <circle cx="33" cy="48" r="5" fill="#f59e0b"/>
+            <circle cx="110" cy="78" r="5" fill="#f59e0b"/>
+          </svg>
+          <span>SafePath IT</span>
+        </a>
+        <div class="nav-links">
+          <a href="#services">Services</a>
+          <a href="#stack">VEGAS Stack</a>
+          <a href="#about">About</a>
+          <a href="#contact" class="btn">Get a Quote</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <!-- ========== HEADER/NAVIGATION BAR END ========== -->
+
+  <!-- ========== MAIN CONTENT AREA START ========== -->
+  <main id="top">
+    <!-- ========== HERO SECTION START ========== -->
+    <!-- Main banner with value proposition and call-to-action buttons -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="badge">Las Vegas • Henderson • Summerlin</div>
+          <h1>Managed IT & Microsoft 365 for Las Vegas SMBs</h1>
+          <p class="lead">Focused scope, expert execution. We keep your team productive and secure with <strong>MSP support</strong>, <strong>Microsoft&nbsp;365 management</strong>, and <strong>light security assessments</strong>—plus proactive monitoring and 24/7 response.</p>
+          <div class="cta">
+            <a href="#contact" class="btn">Start a Conversation</a>
+            <a href="#services" class="btn outline">See Services</a>
+          </div>
+        </div>
+        <div>
+          <!-- Hero card: quick value bullets -->
+          <div class="card" style="padding:22px">
+            <span class="tag">What you get</span>
+            <ul class="list" style="margin-top:14px">
+              <li><strong>Single point of contact:</strong> one number to call, day or night.</li>
+              <li><strong>Microsoft 365 care:</strong> user onboarding, security baselines, backups.</li>
+              <li><strong>Light security checkups:</strong> quick health scans & actionable fixes.</li>
+              <li><strong>Monitoring:</strong> endpoints, servers, network, and M365 signals.</li>
+              <li><strong>24/7 response:</strong> critical issues triaged immediately.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- Vegas skyline SVG REMOVED - was causing overlay issues with important content -->
+      <!-- The skyline graphic was overlapping the CTA buttons and text due to absolute positioning -->
+    </section>
+    <!-- ========== HERO SECTION END ========== -->
+
+    <!-- ========== SERVICES SECTION START ========== -->
+    <!-- Grid of 6 core service offerings -->
+    <section id="services">
+      <div class="container">
+        <h2>Focused Services for Small & Mid‑Sized Business</h2>
+        <div class="cards">
+          <div class="card">
+            <h3>Managed IT (MSP)</h3>
+            <p>Helpdesk, endpoint management, patching, asset tracking, vendor liaison, and lifecycle guidance—delivered with clear SLAs and monthly reporting.</p>
+          </div>
+          <div class="card">
+            <h3>Microsoft 365 Management</h3>
+            <p>User provisioning, license right‑sizing, Exchange/SharePoint/OneDrive best practices, secure device access, and configuration baselines (MFA/Conditional Access).</p>
+          </div>
+          <div class="card">
+            <h3>Light Security Assessments</h3>
+            <p>Rapid security checkups focused on practical fixes: exposure review, password & MFA posture, device encryption status, patch compliance, and M365 secure‑score boosts.</p>
+          </div>
+          <div class="card">
+            <h3>Proactive Monitoring</h3>
+            <p>Endpoint, server, and network monitoring with alerts mapped to priority levels—so you learn about issues before they affect your business.</p>
+          </div>
+          <div class="card">
+            <h3>Network Health</h3>
+            <p>Wi‑Fi heat‑checks, switch/firewall configuration hygiene, internet failover guidance, and small‑office resilience planning.</p>
+          </div>
+          <div class="card">
+            <h3>24/7 Response</h3>
+            <p>Critical incident triage at any hour, with clear escalation paths and transparent communications until resolution.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ========== SERVICES SECTION END ========== -->
+
+    <!-- ========== VEGAS STACK SECTION START ========== -->
+    <!-- Explanation of the VEGAS methodology/framework -->
+    <section id="stack">
+      <div class="container stack">
+        <div>
+          <div class="kicker">Our Opinionated Stack</div>
+          <h2>VEGAS™ Stack — pragmatic tech for local businesses</h2>
+          <p class="lead">We keep the scope tight and the tools proven. The <strong>VEGAS</strong> Stack is our practical blueprint for SMB IT in Southern Nevada.</p>
+          <ul class="list">
+            <li><strong>V — Visibility & Monitoring:</strong> device/patch status, uptime, M365 signals, and alerting with monthly health summaries.</li>
+            <li><strong>E — Endpoint & Email:</strong> Windows/macOS hardening, auto‑patch, and Microsoft 365 email hygiene (SPF/DKIM/DMARC).</li>
+            <li><strong>G — Governance:</strong> account lifecycle, least‑privilege, Conditional Access, backups, and change tracking.</li>
+            <li><strong>A — Assessment & Hardening:</strong> lightweight security checkups with prioritized, business‑friendly remediation.</li>
+            <li><strong>S — Support 24/7:</strong> clear SLAs, escalation playbooks, and steady communications till closure.</li>
+          </ul>
+          <p class="small">Ask about our starter plan: fixed price for up to 25 users with optional add‑ons.</p>
+        </div>
+        <div class="card">
+          <span class="tag">Sample SLA Targets</span>
+          <ul class="list">
+            <li><strong>P1 (down):</strong> response &lt; 15 min • updates every 30 min</li>
+            <li><strong>P2 (degraded):</strong> response &lt; 1 hr • updates hourly</li>
+            <li><strong>P3 (how‑to/request):</strong> response same business day</li>
+            <li><strong>Onboarding:</strong> new user within 1 business day</li>
+            <li><strong>Backups:</strong> daily verification & monthly restore test</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <!-- ========== VEGAS STACK SECTION END ========== -->
+
+    <!-- ========== ABOUT SECTION START ========== -->
+    <!-- Company information and coverage areas -->
+    <section id="about">
+      <div class="container about">
+        <div>
+          <h2>Locally Focused. Business First.</h2>
+          <p class="lead">We’re Las Vegas‑based professionals who speak business outcomes, not jargon. Our approach is simple: tighten the basics, automate the routine, and respond fast when it matters.</p>
+          <ul class="list">
+            <li><strong>Straightforward scope:</strong> we do a few things exceptionally well.</li>
+            <li><strong>Predictable costs:</strong> flat monthly pricing with no surprises.</li>
+            <li><strong>Security‑minded:</strong> practical safeguards before fancy tools.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="tag">Coverage</span>
+          <p style="margin-top:10px; color:var(--muted)">Las Vegas • Henderson • Summerlin • North Las Vegas • Enterprise • Paradise</p>
+          <span class="tag" style="margin-top:12px; display:inline-block; background: var(--accent); color:white">Industries</span>
+          <p style="margin-top:10px; color:var(--muted)">Professional services, retail, hospitality, trades, non‑profits, and startups.</p>
+        </div>
+      </div>
+    </section>
+    <!-- ========== ABOUT SECTION END ========== -->
+
+    <!-- ========== CONTACT SECTION START ========== -->
+    <!-- Contact form and 90-day onboarding plan -->
+    <section id="contact">
+      <div class="container contact">
+        <div>
+          <h2>Let’s plan your first 90 days</h2>
+          <p class="lead">We’ll map onboarding, hygiene fixes, and quick wins into a 90‑day plan—then get to work.</p>
+          <ul class="list">
+            <li><strong>Week 1–2:</strong> device inventory, M365 baselines, quick security wins.</li>
+            <li><strong>Week 3–6:</strong> monitoring roll‑out, backup verification, Wi‑Fi tune‑ups.</li>
+            <li><strong>Week 7–12:</strong> policy clean‑up, cost right‑sizing, restore drills, and exec summary.</li>
+          </ul>
+        </div>
+        <form onsubmit="event.preventDefault(); alert('Thanks! We\'ll be in touch shortly.');">
+          <label for="name">Name</label>
+          <input id="name" name="name" placeholder="Your name" required>
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="you@company.com" required>
+
+          <label for="message">How can we help?</label>
+          <textarea id="message" name="message" placeholder="Briefly describe your situation"></textarea>
+
+          <div style="display:flex; gap:10px; align-items:center; margin-top:14px">
+            <button class="btn" type="submit">Request a Quote</button>
+            <a class="btn outline" href="mailto:hello@safepathit.example" aria-label="Email SafePath IT">Email us</a>
+          </div>
+          <p class="small" style="margin-top:10px">Prefer the phone? <strong>(702) 555‑0137</strong></p>
+        </form>
+      </div>
+    </section>
+    <!-- ========== CONTACT SECTION END ========== -->
+  </main>
+  <!-- ========== MAIN CONTENT AREA END ========== -->
+
+  <!-- ========== FOOTER START ========== -->
+  <!-- Copyright, summary info, and back-to-top link -->
+  <footer>
+    <div class="container">
+      <div style="display:flex; justify-content:center; gap:18px; flex-wrap:wrap; margin-bottom:10px">
+        <span class="small">© <span id="year"></span> SafePath IT, Las Vegas NV</span>
+        <span class="small">MSP • Microsoft 365 • Security Checkups</span>
+        <span class="small"><a href="#top">Back to top</a></span>
+      </div>
+      <div class="small">Built with the <strong>VEGAS™</strong> Stack: Visibility • Endpoint/Email • Governance • Assessment • Support</div>
+    </div>
+  </footer>
+  <!-- ========== FOOTER END ========== -->
+
+  <!-- ========== JAVASCRIPT START ========== -->
+  <script>
+    // Simple niceties
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // Smooth in-page scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const id = a.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}); }
+      });
+    });
+  </script>
+  <!-- ========== JAVASCRIPT END ========== -->
+</body>
+</html>

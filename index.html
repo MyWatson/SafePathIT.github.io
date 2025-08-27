@@ -3,27 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SafePath IT — Focused scope. Expert execution.</title>
-  <meta name="description" content="SafePath IT — MSP support, Microsoft 365 care, light security checkups, monitoring, 24/7 response, AI overlays, camera security with AI, and failover internet solutions for SMBs in Las Vegas." />
+  <title>SafePath IT – Focused scope. Expert execution.</title>
+  <meta name="description" content="SafePath IT – MSP support, Microsoft 365 care, light security checkups, monitoring, 24/7 response, AI overlays, camera security with AI, and failover internet solutions for SMBs in Las Vegas." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg: #0b0d12;            /* deep night */
-      --bg-soft:#10141c;        /* card bg */
-      --bg-elev:#141a24;        /* hover elev */
-      --text: #eef2f7;          /* primary text */
-      --muted:#b8c2cf;          /* secondary text */
-      --brand:#2fd39e;          /* accent mint */
-      --brand-2:#6ea8ff;        /* secondary accent */
-      --line:#253045;           /* hairline */
-      --good:#22c55e;           /* status */
-      --warn:#f59e0b;           /* status */
-      --bad:#ef4444;            /* status */
+      --bg: #0b0d12;
+      --bg-soft:#10141c;
+      --bg-elev:#141a24;
+      --text: #eef2f7;
+      --muted:#b8c2cf;
+      --brand:#2fd39e;
+      --brand-2:#6ea8ff;
+      --line:#253045;
+      --good:#22c55e;
+      --warn:#f59e0b;
+      --bad:#ef4444;
       --shadow: 0 10px 30px rgba(0,0,0,.35), 0 2px 8px rgba(0,0,0,.25);
-      --radius-xl: 18px;        /* soft corners */
-      --radius-2xl: 26px;       /* stronger corners when needed */
+      --radius-xl: 18px;
+      --radius-2xl: 26px;
       --transition: all .24s ease;
       --grid-gap: clamp(16px,2.2vw,28px);
       --maxw: 1160px;
@@ -34,9 +34,12 @@
       margin:0; font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
       color:var(--text); background:linear-gradient(180deg,#0b0d12 0%, #0c111a 40%, #0d131e 100%);
       -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+      min-height: 100vh;
     }
     a{color:inherit; text-decoration:none}
     .container{max-width:var(--maxw); margin:0 auto; padding:0 20px}
+    
+    /* Navigation */
     .nav{
       position:sticky; top:0; z-index:50; backdrop-filter:saturate(160%) blur(8px);
       background:rgba(11,13,18,.7); border-bottom:1px solid var(--line);
@@ -45,9 +48,19 @@
     .brand{display:flex; gap:12px; align-items:center}
     .logo{width:36px; height:36px; display:grid; place-items:center; border-radius:12px; background:radial-gradient(120% 120% at 20% 20%, #2fd39e 0%, #6ea8ff 60%, #1d2636 100%); box-shadow: var(--shadow)}
     .brand h1{font-size:18px; letter-spacing:.4px; margin:0; font-weight:700}
-    .nav-links{display:flex; gap:18px}
-    .nav a{opacity:.9}
-    .nav a:hover{opacity:1}
+    .nav-links{display:flex; gap:18px; align-items:center}
+    .nav-links a{opacity:.9; padding:8px 12px; border-radius:8px; transition:var(--transition)}
+    .nav-links a:hover{opacity:1; background:var(--bg-soft)}
+    .nav-links .dropdown{position:relative}
+    .dropdown-content{
+      display:none; position:absolute; top:100%; left:0; min-width:200px;
+      background:rgba(16,20,28,.95); backdrop-filter:blur(10px);
+      border:1px solid var(--line); border-radius:12px; padding:8px;
+      margin-top:8px; box-shadow:var(--shadow);
+    }
+    .dropdown:hover .dropdown-content{display:block}
+    .dropdown-content a{display:block; padding:10px 12px; border-radius:8px; margin:2px 0}
+    .dropdown-content a:hover{background:var(--bg-elev)}
     
     /* Mobile navigation */
     .menu-toggle{display:none; background:transparent; border:1px solid var(--line); padding:8px; border-radius:8px; color:var(--text); cursor:pointer}
@@ -57,6 +70,7 @@
       .nav-links.active{display:flex}
       .nav-links a{padding:12px; border-radius:8px}
       .nav-links a:hover{background:var(--bg-soft)}
+      .dropdown-content{position:static; display:block; background:transparent; border:none; padding-left:20px}
       .menu-toggle{display:block}
     }
 
@@ -92,7 +106,7 @@
     .btn.primary{background:linear-gradient(180deg,#2fd39e,#19b786); border-color:#19b786; color:#0b0f15}
     .btn.primary:hover{filter:saturate(110%)}
 
-    /* LV Silhouette (stencil) */
+    /* LV Silhouette */
     .lv-stencil{position:absolute; bottom:-2px; right:-6px; width:min(560px, 48vw); opacity:.08}
 
     /* Section */
@@ -128,9 +142,50 @@
     .dot.good{background:var(--good)} .dot.warn{background:var(--warn)} .dot.bad{background:var(--bad)}
     .dot{width:8px; height:8px; border-radius:50%; box-shadow:0 0 10px rgba(255,255,255,.12)}
 
+    /* Stats Section */
+    .stats-section{
+      padding:60px 0; 
+      background:linear-gradient(180deg, rgba(16,20,28,0.5), rgba(20,26,36,0.3));
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+    }
+    .stats-grid{
+      display:grid; 
+      grid-template-columns:repeat(4,1fr); 
+      gap:var(--grid-gap);
+    }
+    @media (max-width: 768px){.stats-grid{grid-template-columns:repeat(2,1fr)}}
+    .stat-card{
+      text-align:center; 
+      padding:24px;
+    }
+    .stat-number{
+      font-size:2.5rem; 
+      font-weight:700; 
+      background:linear-gradient(135deg, var(--brand), var(--brand-2));
+      -webkit-background-clip:text; 
+      -webkit-text-fill-color:transparent;
+      margin-bottom:8px;
+    }
+    .stat-label{color:var(--muted); font-size:14px}
+
     /* Footer */
     footer{padding:40px 0 60px; color:#a9b6c7}
-    .foot{display:flex; gap:16px; flex-wrap:wrap; align-items:center; justify-content:space-between; border-top:1px solid var(--line); padding-top:20px}
+    .foot-grid{
+      display:grid; 
+      grid-template-columns:2fr 1fr 1fr 1fr; 
+      gap:40px; 
+      padding-bottom:30px; 
+      border-bottom:1px solid var(--line);
+      margin-bottom:30px;
+    }
+    @media (max-width: 768px){.foot-grid{grid-template-columns:1fr; gap:30px}}
+    .foot-section h3{font-size:14px; text-transform:uppercase; letter-spacing:1px; color:var(--muted); margin-bottom:12px}
+    .foot-section ul{list-style:none; padding:0; margin:0}
+    .foot-section ul li{margin-bottom:8px}
+    .foot-section ul li a{color:var(--text); opacity:.7; transition:var(--transition)}
+    .foot-section ul li a:hover{opacity:1; color:var(--brand)}
+    .foot{display:flex; gap:16px; flex-wrap:wrap; align-items:center; justify-content:space-between}
     .tiny{font-size:12px; opacity:.8}
 
     /* Smooth reveal */
@@ -143,8 +198,7 @@
   <nav class="nav">
     <div class="container nav-inner">
       <div class="brand">
-        <div class="logo" aria-hidden="true">
-          <!-- Desert road + circuit traces forming an S -->
+        <a href="index.html" class="logo" aria-label="SafePath IT Home">
           <svg viewBox="0 0 144 144" width="36" height="36">
             <defs>
               <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
@@ -157,14 +211,23 @@
             <circle cx="33" cy="48" r="5" fill="#f59e0b"/>
             <circle cx="110" cy="78" r="5" fill="#f59e0b"/>
           </svg>
-        </div>
-        <h1>SafePath IT</h1>
+        </a>
+        <h1><a href="index.html">SafePath IT</a></h1>
       </div>
       <div class="nav-links" id="navLinks">
-        <a href="#services">Services</a>
-        <a href="#ai">AI</a>
-        <a href="#security">Security</a>
-        <a href="#contact" class="btn">Contact</a>
+        <div class="dropdown">
+          <a href="#services">Services ▾</a>
+          <div class="dropdown-content">
+            <a href="services.html">All Services</a>
+            <a href="services.html#msp">MSP Support</a>
+            <a href="services.html#microsoft">Microsoft 365</a>
+            <a href="services.html#security">Security</a>
+          </div>
+        </div>
+        <a href="ai-solutions.html">AI Solutions</a>
+        <a href="cybersecurity.html">Cybersecurity</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="btn">Contact</a>
       </div>
       <button class="menu-toggle" onclick="document.getElementById('navLinks').classList.toggle('active')" aria-label="Menu">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
@@ -180,14 +243,14 @@
     <div class="container hero-grid">
       <div class="hero-card reveal">
         <span class="badge"><span class="dot"></span>Focused scope. Expert execution.</span>
-        <h2>Keep your business productive and secure — with a human you can reach.</h2>
+        <h2>Keep your business productive and secure – with a human you can reach.</h2>
         <p>
           MSP support, <strong>Microsoft 365 care</strong>, light security checkups, continuous monitoring, and <strong>24/7 response</strong>.
-          We layer practical <strong>AI</strong> on top so small businesses can compete like enterprises — without the overhead.
+          We layer practical <strong>AI</strong> on top so small businesses can compete like enterprises – without the overhead.
         </p>
         <div class="cta-row">
-          <a class="btn primary" href="#contact">Get help now</a>
-          <a class="btn" href="#services">Explore services</a>
+          <a class="btn primary" href="contact.html">Get help now</a>
+          <a class="btn" href="services.html">Explore services</a>
         </div>
         <!-- Las Vegas skyline stencil -->
         <svg class="lv-stencil" viewBox="0 0 800 220" preserveAspectRatio="xMaxYMax meet" aria-hidden="true">
@@ -209,15 +272,39 @@
       </div>
       <div class="hero-card reveal" style="display:grid; align-content:center; gap:12px">
         <div class="status-list">
-          <div class="pill"><span class="dot good"></span>Monitoring online — all clients</div>
-          <div class="pill"><span class="dot warn"></span>3 devices pending patch — auto-queue tonight</div>
-          <div class="pill"><span class="dot good"></span>Backups verified in last 24h — 100%</div>
-          <div class="pill"><span class="dot bad"></span>1 ISP outage — failover activated</div>
+          <div class="pill"><span class="dot good"></span>Monitoring online – all clients</div>
+          <div class="pill"><span class="dot warn"></span>3 devices pending patch – auto-queue tonight</div>
+          <div class="pill"><span class="dot good"></span>Backups verified in last 24h – 100%</div>
+          <div class="pill"><span class="dot bad"></span>1 ISP outage – failover activated</div>
           <div class="pill"><span class="dot good"></span>AI assistant active in support channels</div>
         </div>
       </div>
     </div>
   </header>
+
+  <!-- Stats -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card reveal">
+          <div class="stat-number">99.9%</div>
+          <div class="stat-label">Uptime Guaranteed</div>
+        </div>
+        <div class="stat-card reveal">
+          <div class="stat-number">24/7</div>
+          <div class="stat-label">Security Monitoring</div>
+        </div>
+        <div class="stat-card reveal">
+          <div class="stat-number">500+</div>
+          <div class="stat-label">Protected Endpoints</div>
+        </div>
+        <div class="stat-card reveal">
+          <div class="stat-number">&lt;15min</div>
+          <div class="stat-label">Response Time</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Services -->
   <section id="services" class="container">
@@ -227,94 +314,57 @@
     </div>
 
     <div class="grid cols-3">
-      <!-- Single point of contact -->
       <article class="card reveal">
         <div class="icon-wrap">
-          <!-- headset icon -->
           <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#6ea8ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 18 0"/><path d="M21 12v4a3 3 0 0 1-3 3h-2"/><path d="M3 12v4a3 3 0 0 0 3 3h2"/><path d="M7 19v-6"/><path d="M17 19v-6"/></svg>
         </div>
         <h3>Single Point of Contact</h3>
-        <p>One channel for everything — tickets, chat, and vendor coordination end‑to‑end.</p>
+        <p>One channel for everything – tickets, chat, and vendor coordination end‑to‑end.</p>
       </article>
 
-      <!-- Microsoft 365 care -->
       <article class="card reveal">
         <div class="icon-wrap">
-          <!-- apps icon -->
           <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#2fd39e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></svg>
         </div>
         <h3>Microsoft 365 Care</h3>
         <p>Licensing, setup, security baseline, user support, Teams & SharePoint best practices.</p>
       </article>
 
-      <!-- Light security checkups -->
       <article class="card reveal">
         <div class="icon-wrap">
-          <!-- shield icon -->
           <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#6ea8ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 4v6c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V7l7-4z"/></svg>
         </div>
         <h3>Light Security Checkups</h3>
-        <p>Quarterly reviews to reduce risk — MFA, patch hygiene, email posture, endpoint health.</p>
+        <p>Quarterly reviews to reduce risk – MFA, patch hygiene, email posture, endpoint health.</p>
       </article>
 
-      <!-- Monitoring & alerts -->
       <article class="card reveal">
         <div class="icon-wrap">
-          <!-- activity icon -->
           <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#2fd39e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
         </div>
         <h3>Monitoring & Alerts</h3>
-        <p>24/7 oversight for devices, servers, networks — proactive remediation, clear reports.</p>
+        <p>24/7 oversight for devices, servers, networks – proactive remediation, clear reports.</p>
       </article>
 
-      <!-- 24/7 response -->
       <article class="card reveal">
         <div class="icon-wrap">
-          <!-- clock icon -->
           <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#6ea8ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
         </div>
         <h3>24/7 Response</h3>
         <p>Real people, real time. Critical issues escalated to senior engineers immediately.</p>
       </article>
 
-      <!-- Vendor liaison -->
       <article class="card reveal">
         <div class="icon-wrap">
-          <!-- handshake icon (stylized) -->
           <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#2fd39e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l5-5 4 4 4-4 5 5"/><path d="M3 12l5 5 4-4 4 4 5-5"/></svg>
         </div>
         <h3>Vendor Liaison</h3>
-        <p>We own the support loop with your vendors — from first contact to confirmed fix.</p>
+        <p>We own the support loop with your vendors – from first contact to confirmed fix.</p>
       </article>
     </div>
-  </section>
 
-  <!-- Scaled support & value add -->
-  <section class="container">
-    <div class="feature-row">
-      <div class="card reveal">
-        <h3 style="margin-top:0">Scaled Support Options</h3>
-        <p class="muted">Right-sized help — hands & feet on‑site, senior engineers remote.</p>
-        <div class="grid cols-2" style="margin-top:12px">
-          <div class="card" style="padding:16px">
-            <strong>Boots on the Ground</strong>
-            <p class="muted">Moves, PC & network setups, installs — the laborious tasks handled quickly.</p>
-          </div>
-          <div class="card" style="padding:16px">
-            <strong>Remote Engineers</strong>
-            <p class="muted">Enterprise skills applied to SMB realities — architecture, standards, cost wins.</p>
-          </div>
-        </div>
-      </div>
-      <div class="card reveal">
-        <h3 style="margin-top:0">Value‑Add IT</h3>
-        <ul style="margin:8px 0 0 18px; color:var(--muted)">
-          <li>Standardization & assessments</li>
-          <li>Cost optimization</li>
-          <li>Data backup & protection</li>
-          <li>Website hosting & design</li>
-        </ul>
-      </div>
+    <div style="text-align:center; margin-top:40px">
+      <a href="services.html" class="btn primary">View All Services →</a>
     </div>
   </section>
 
@@ -327,7 +377,6 @@
     <div class="grid cols-3">
       <article class="card reveal">
         <div class="icon-wrap">
-          <!-- cam icon -->
           <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#6ea8ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="2"/><circle cx="12" cy="12" r="3"/></svg>
         </div>
         <h3>Camera Security with AI</h3>
@@ -335,7 +384,6 @@
       </article>
       <article class="card reveal">
         <div class="icon-wrap">
-          <!-- link cloud icon -->
           <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#2fd39e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10a4 4 0 0 0-7.9-.8A3 3 0 1 0 6 16h11a3 3 0 0 0 1-5.8z"/><path d="M8 17l3 3 3-3"/></svg>
         </div>
         <h3>Failover Internet</h3>
@@ -343,12 +391,14 @@
       </article>
       <article class="card reveal">
         <div class="icon-wrap">
-          <!-- database shield -->
           <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#6ea8ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 11v6c0 1.7 3.6 3 8 3"/><path d="M20 11v2"/></svg>
         </div>
         <h3>Backup & DR</h3>
         <p>On‑site + cloud backups, regular restores tested, clear recovery objectives.</p>
       </article>
+    </div>
+    <div style="text-align:center; margin-top:40px">
+      <a href="cybersecurity.html" class="btn">Explore Cybersecurity →</a>
     </div>
   </section>
 
@@ -361,7 +411,6 @@
     <div class="grid cols-3">
       <article class="card reveal">
         <div class="icon-wrap">
-          <!-- bot icon -->
           <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#2fd39e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="10" rx="3"/><path d="M8 7V4a4 4 0 0 1 8 0v3"/><circle cx="9" cy="12" r="1"/><circle cx="15" cy="12" r="1"/></svg>
         </div>
         <h3>Agentic Assistants</h3>
@@ -369,7 +418,6 @@
       </article>
       <article class="card reveal">
         <div class="icon-wrap">
-          <!-- layers icon -->
           <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#6ea8ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 12l9 5 9-5"/></svg>
         </div>
         <h3>RAG Knowledge</h3>
@@ -377,29 +425,26 @@
       </article>
       <article class="card reveal">
         <div class="icon-wrap">
-          <!-- spark icon -->
           <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#2fd39e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6M12 16v6M4 12h6M14 12h6"/></svg>
         </div>
         <h3>Productivity Boosters</h3>
         <p>Automations across M365, Slack/Teams, and email. Fewer clicks, faster outcomes.</p>
       </article>
     </div>
-    <div class="card reveal" style="margin-top:var(--grid-gap)">
-      <h3 style="margin-top:0">Connect how you work</h3>
-      <p class="muted">Dedicated Slack/Teams channels with a SafePath AI bot that searches your Knowledge Base, triages issues, and opens tickets.
-      </p>
+    <div style="text-align:center; margin-top:40px">
+      <a href="ai-solutions.html" class="btn primary">Discover AI Solutions →</a>
     </div>
   </section>
 
-  <!-- Contact -->
+  <!-- Contact CTA -->
   <section id="contact" class="container">
     <div class="card reveal" style="display:grid; grid-template-columns:1.2fr .8fr; gap:var(--grid-gap); align-items:center">
       <div>
         <h3 style="margin-top:0">Talk to a real person</h3>
-        <p class="muted">Tell us what’s going on. We’ll respond fast and get you back on a safe path.</p>
+        <p class="muted">Tell us what's going on. We'll respond fast and get you back on a safe path.</p>
         <div class="cta-row">
-          <a class="btn primary" href="mailto:hello@safepathit.com?subject=SafePath%20IT%20Help">hello@safepathit.com</a>
-          <a class="btn" href="#">Book a consult</a>
+          <a class="btn primary" href="contact.html">Start a Conversation</a>
+          <a class="btn" href="tel:1-800-SAFEPATH">Call Now</a>
         </div>
       </div>
       <div class="status-list">
@@ -410,27 +455,66 @@
     </div>
   </section>
 
+  <!-- Footer -->
   <footer class="container">
-    <div class="foot">
-      <div class="brand">
-        <div class="logo" aria-hidden="true">
-          <!-- Desert road + circuit traces forming an S -->
-          <svg viewBox="0 0 144 144" width="36" height="36">
-            <defs>
-              <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stop-color="#4fd1c5"/>
-                <stop offset="100%" stop-color="#8b5cf6"/>
-              </linearGradient>
-            </defs>
-            <rect width="144" height="144" rx="28" fill="#0c131a" />
-            <path d="M18 102c30-26 60-3 78-24 8-9 8-21-1-27-23-16-59 12-72-3" fill="none" stroke="url(#g2)" stroke-width="10" stroke-linecap="round"/>
-            <circle cx="33" cy="48" r="5" fill="#f59e0b"/>
-            <circle cx="110" cy="78" r="5" fill="#f59e0b"/>
-          </svg>
+    <div class="foot-grid">
+      <div class="foot-section">
+        <div class="brand">
+          <div class="logo" aria-hidden="true">
+            <svg viewBox="0 0 144 144" width="36" height="36">
+              <defs>
+                <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#4fd1c5"/>
+                  <stop offset="100%" stop-color="#8b5cf6"/>
+                </linearGradient>
+              </defs>
+              <rect width="144" height="144" rx="28" fill="#0c131a" />
+              <path d="M18 102c30-26 60-3 78-24 8-9 8-21-1-27-23-16-59 12-72-3" fill="none" stroke="url(#g2)" stroke-width="10" stroke-linecap="round"/>
+              <circle cx="33" cy="48" r="5" fill="#f59e0b"/>
+              <circle cx="110" cy="78" r="5" fill="#f59e0b"/>
+            </svg>
+          </div>
+          <strong>SafePath IT</strong>
         </div>
-        <strong>SafePath IT</strong>
+        <p style="margin-top:12px; color:var(--muted)">
+          Focused scope. Expert execution.<br>
+          Human-centered MSP with AI overlay for Las Vegas SMBs.
+        </p>
       </div>
-      <div class="tiny">© <span id="y"></span> SafePath IT — Las Vegas, NV • Human‑centered MSP with AI</div>
+      <div class="foot-section">
+        <h3>Services</h3>
+        <ul>
+          <li><a href="services.html">MSP Support</a></li>
+          <li><a href="services.html#microsoft">Microsoft 365</a></li>
+          <li><a href="cybersecurity.html">Cybersecurity</a></li>
+          <li><a href="ai-solutions.html">AI Solutions</a></li>
+        </ul>
+      </div>
+      <div class="foot-section">
+        <h3>Company</h3>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="about.html#team">Our Team</a></li>
+          <li><a href="about.html#partners">Partners</a></li>
+          <li><a href="contact.html#careers">Careers</a></li>
+        </ul>
+      </div>
+      <div class="foot-section">
+        <h3>Contact</h3>
+        <ul>
+          <li><a href="tel:1-800-SAFEPATH">1-800-SAFEPATH</a></li>
+          <li><a href="mailto:hello@safepathit.com">hello@safepathit.com</a></li>
+          <li><a href="contact.html">24/7 Support Portal</a></li>
+          <li>Las Vegas, NV</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot">
+      <div class="tiny">© <span id="y"></span> SafePath IT – Las Vegas, NV • Human‑centered MSP with AI</div>
+      <div class="tiny">
+        <a href="#privacy">Privacy Policy</a> • 
+        <a href="#terms">Terms of Service</a>
+      </div>
     </div>
   </footer>
 

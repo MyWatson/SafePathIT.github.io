@@ -48,6 +48,17 @@
     .nav-links{display:flex; gap:18px}
     .nav a{opacity:.9}
     .nav a:hover{opacity:1}
+    
+    /* Mobile navigation */
+    .menu-toggle{display:none; background:transparent; border:1px solid var(--line); padding:8px; border-radius:8px; color:var(--text); cursor:pointer}
+    @media (max-width: 768px){
+      .brand h1{font-size:16px}
+      .nav-links{display:none; position:absolute; top:64px; left:0; right:0; background:rgba(11,13,18,.95); flex-direction:column; padding:20px; gap:12px; border-bottom:1px solid var(--line)}
+      .nav-links.active{display:flex}
+      .nav-links a{padding:12px; border-radius:8px}
+      .nav-links a:hover{background:var(--bg-soft)}
+      .menu-toggle{display:block}
+    }
 
     /* Hero */
     .hero{position:relative; padding:64px 0 40px; overflow:hidden}
@@ -57,7 +68,11 @@
                  radial-gradient(650px 280px at 80% 20%, rgba(110,168,255,.30), transparent 60%);
     }
     .hero-grid{display:grid; grid-template-columns:1.15fr .85fr; gap:var(--grid-gap)}
-    @media (max-width: 960px){ .hero-grid{grid-template-columns:1fr} }
+    @media (max-width: 960px){ 
+      .hero-grid{grid-template-columns:1fr}
+      .hero{padding:40px 0 30px}
+      .hero-card{padding:24px}
+    }
     .hero-card{
       background:linear-gradient(180deg, var(--bg-soft), #0f141c);
       box-shadow: var(--shadow); border:1px solid var(--line); border-radius:var(--radius-2xl);
@@ -65,9 +80,13 @@
     }
     .badge{display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border-radius:999px; background:#0f1a28; border:1px solid #1b2740; color:var(--muted); font-size:12px; font-weight:600; letter-spacing:.3px}
     .badge .dot{width:8px; height:8px; border-radius:50%; background:var(--brand); box-shadow:0 0 12px rgba(47,211,158,.8)}
-    .hero h2{font-size: clamp(28px, 4.2vw, 44px); line-height:1.08; margin:14px 0 10px}
+    .hero h2{font-size: clamp(24px, 4.2vw, 44px); line-height:1.15; margin:14px 0 10px}
     .hero p{color:var(--muted); font-size: clamp(14px, 1.6vw, 16px); max-width:60ch}
     .cta-row{display:flex; gap:12px; flex-wrap:wrap; margin-top:18px}
+    @media (max-width: 480px){
+      .cta-row{flex-direction:column}
+      .cta-row .btn{width:100%; justify-content:center}
+    }
     .btn{display:inline-flex; align-items:center; gap:10px; padding:12px 16px; border-radius:14px; border:1px solid #20304b; background:#111827; color:var(--text); font-weight:600; transform:translateZ(0); transition:var(--transition)}
     .btn:hover{background:#152034; border-color:#2b3e60; translate:0 -1px}
     .btn.primary{background:linear-gradient(180deg,#2fd39e,#19b786); border-color:#19b786; color:#0b0f15}
@@ -141,12 +160,17 @@
         </div>
         <h1>SafePath IT</h1>
       </div>
-      <div class="nav-links">
+      <div class="nav-links" id="navLinks">
         <a href="#services">Services</a>
         <a href="#ai">AI</a>
         <a href="#security">Security</a>
         <a href="#contact" class="btn">Contact</a>
       </div>
+      <button class="menu-toggle" onclick="document.getElementById('navLinks').classList.toggle('active')" aria-label="Menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <path d="M3 12h18M3 6h18M3 18h18"/>
+        </svg>
+      </button>
     </div>
   </nav>
 
@@ -418,6 +442,12 @@
       entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target); } });
     },{threshold:.12});
     document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+    // close mobile menu on link click
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('navLinks').classList.remove('active');
+      });
+    });
   </script>
 </body>
 </html>

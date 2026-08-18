@@ -68,7 +68,7 @@ Fractional tech partner for a GC or growing sub: keeps the systems from decaying
 
 ## Cross-cutting line — Security (both verticals)
 
-Credibility anchor: master's degree in cybersecurity + AI-assisted audit tooling. Sold inside the same tier structure; explicitly NOT ongoing monitoring/SOC work (violates the minutes-per-day constraint).
+Credibility anchor: master's degree in cybersecurity + AI-assisted audit tooling + a career on the audited side of regulated environments — HIPAA/HITRUST (Athenahealth healthcare data), SOX (banking data centers), PCI (Las Vegas gaming, MGM via Xerox), enterprise ops at IBM and GE Aerospace. Sold inside the same tier structure; explicitly NOT ongoing monitoring/SOC work (violates the minutes-per-day constraint).
 
 ### Assessment ($2,500–5,000)
 

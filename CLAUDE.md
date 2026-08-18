@@ -4,7 +4,17 @@
 
 ## Who
 
-Clinton "Jungle" Stechyshyn. 26–27 years in IT (development, infrastructure, PM/program management, data). Holds a **master's degree in cybersecurity** (added to the brief Aug 18, 2026 — wasn't in the original session). Enterprise/regulated-environment track record (added Aug 18, 2026): 7 years at IBM; Athenahealth (healthcare/HIPAA); GE Aerospace; regulated banking data centers (SOX, HITRUST); PCI audits in the Las Vegas gaming industry, including MGM via Xerox. Positioning rule for this material: it's a strength to be **delicately placed** — framed as risk-reduction and audit fluency for the client ("I've been on the audited side"), never as name-dropping. Lives in the site's "Where This Comes From" section. Currently Digital Platform Owner at Clinton Tractor & Implement Co. (New Holland dealership, Clinton NY), where he built CROP — an AI-powered parts e-commerce/discovery platform (crop.clintontractor.net, 635K+ discovered pages, GCP/Vercel/MongoDB/Elasticsearch stack). Also owns an epoxy & decorative concrete business with construction-trade relationships (Las Vegas). Has access to an offshore (Ukrainian) dev bench for scaling past solo capacity. Daily practitioner of AI-accelerated delivery — this is the core differentiator.
+John "Jungle" Stechyshyn (first name corrected from "Clinton" Aug 18, 2026 per CV — earlier brief text conflated him with Clinton Tractor/Clinton NY). 26–27 years in IT (development, infrastructure, PM/program management, data). Holds an **M.S. in Cybersecurity & Intelligence (Utica College)**; B.T. Network Administration (SUNY Morrisville).
+
+CV-verified enterprise track record (CV supplied Aug 18, 2026; use these numbers, they're real):
+- **GE Aerospace** (2024–25, Sr. TPM): $290M M&A separation — 350 app migrations, 12 waves, 100% on-time, zero Sev-1 post-cutover, ~$7.2M annual savings, <3% cutover variance.
+- **athenahealth** (2019–22, Director TPM): $5.7B GE Healthcare/Virence divestiture — rescued a previously failed TSA exit; Bangalore→Azure lab migration for 1,000 developers in a 60-day contractual window; datacenter closed six weeks early.
+- **American Homes 4 Rent** (2022–23, Sr. Mgr Cloud Eng & DevOps): Las Vegas publicly traded REIT; Rackspace→Azure; IaC/CI/CD. (Vegas credibility beyond the concrete business.)
+- **IBM** (2012–19, 7 years): Watson Security solutions architect; Watson Health Cloud architect; security architect/audit compliance for regulated healthcare clients (QRadar, Guardium).
+- **Early career** (2001–12): MGM Grand AD migration architect (65,000 users, 8,000 groups, PCI-DSS remediation); NBT Bank ($12B assets) infrastructure; CVS P2V program; All Covered IT — bootstrapped a cloud backup/BURA managed-services practice later **acquired by Konica Minolta**.
+- Compliance fluency per CV: SOC 2, PCI-DSS, HIPAA, ISO 27001, NIST, COBIT, CIS, ITIL. (Earlier brief mentions of HITRUST/SOX were verbal; prefer the CV list on public material.)
+
+Positioning rule: this is a strength to be **delicately placed** — professional, direct, confident, not over the top; framed as risk-reduction and judgment for the client, never name-dropping. Lives in the site's "Track Record" section. Currently Digital Platform Owner at Clinton Tractor & Implement Co. (New Holland dealership, Clinton NY), where he built CROP — an AI-powered parts e-commerce/discovery platform (crop.clintontractor.net, 635K+ discovered pages, GCP/Vercel/MongoDB/Elasticsearch stack). Also owns an epoxy & decorative concrete business with construction-trade relationships (Las Vegas). Has access to an offshore (Ukrainian) dev bench for scaling past solo capacity. Daily practitioner of AI-accelerated delivery — this is the core differentiator.
 
 ## The venture
 

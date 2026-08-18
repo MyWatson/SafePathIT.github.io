@@ -18,7 +18,7 @@ Rules that hold across both verticals:
 
 ## Vertical A — Equipment dealers & ag-adjacent businesses
 
-Credibility anchor: CROP is live at a working New Holland dealership — 635K+ discovered pages, real parts commerce. The pitch is "I did this for my own dealership," not a slide deck.
+Credibility anchor: Jungle builds and runs AI-powered dealer platforms day to day (parts discovery, e-commerce, dealer data). Public materials keep this generic — the CROP platform is a separate business and stays unnamed on SafePath collateral (brief, conclusion 6); it can be demoed live in conversation where appropriate.
 
 ### Assessment ($3,500–5,000 for a dealership; $2,500 for smaller ag-adjacent)
 
@@ -26,20 +26,20 @@ Credibility anchor: CROP is live at a working New Holland dealership — 635K+ d
 
 - Inventory of the stack: DMS, parts systems, e-commerce presence, phones/comms, spreadsheets that secretly run the business
 - Data dig: where parts, customer, service, and sales data lives; what's trapped; what's duplicated
-- Web/discovery audit: how findable is the dealership's inventory and parts catalog to a customer searching online (the CROP lens)
+- Web/discovery audit: how findable is the dealership's inventory and parts catalog to a customer searching online
 - Process walkthrough with parts counter, service writer, and office manager — where the hours actually go
 - **Deliverable:** written roadmap, 3–7 prioritized opportunities, each with a fixed-price Build quote attached
 
 ### Builds ($5,000–15,000)
 
-- **Parts/inventory discovery layer** — CROP-pattern web presence for the dealer's catalog (scoped-down, per-dealer)
+- **Parts/inventory discovery layer** — web presence that makes the dealer's catalog findable and shoppable (scoped per-dealer)
 - **Dealer ops dashboard** — absorption rate, parts turns, service backlog, aged inventory in one live view instead of month-end DMS reports
 - **Quote/lead automation** — inbound web and phone leads routed, enriched, and answered with AI drafting + human approval
 - **DMS/e-commerce integration** — connect the systems the vendors say don't talk to each other
 
 ### Retainer ($2,500–4,000/mo)
 
-Fractional digital platform owner — the role Jungle plays at Clinton Tractor, sold in slices: vendor management (DMS, OEM portals), roadmap stewardship, one build-sprint's worth of small fixes per month.
+Fractional digital platform owner — the role Jungle plays in his dealership day job, sold in slices: vendor management (DMS, OEM portals), roadmap stewardship, one build-sprint's worth of small fixes per month.
 
 ## Vertical B — Construction & trades (Las Vegas)
 

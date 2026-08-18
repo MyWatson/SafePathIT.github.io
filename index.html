@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>SafePath IT – Focused scope. Expert execution.</title>
-  <meta name="description" content="SafePath IT – MSP support, Microsoft 365 care, light security checkups, monitoring, 24/7 response, AI overlays, camera security with AI, and failover internet solutions for SMBs in Las Vegas." />
+  <meta name="description" content="SafePath IT – AI and data systems, security audits, and fractional advisory for equipment dealers and construction trades. Fixed-scope engagements from a 26-year IT veteran with a master's in cybersecurity who runs businesses in both industries." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -29,6 +29,7 @@
       --maxw: 1160px;
     }
     *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
     html,body{height:100%}
     body{
       margin:0; font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
@@ -38,7 +39,7 @@
     }
     a{color:inherit; text-decoration:none}
     .container{max-width:var(--maxw); margin:0 auto; padding:0 20px}
-    
+
     /* Navigation */
     .nav{
       position:sticky; top:0; z-index:50; backdrop-filter:saturate(160%) blur(8px);
@@ -51,17 +52,7 @@
     .nav-links{display:flex; gap:18px; align-items:center}
     .nav-links a{opacity:.9; padding:8px 12px; border-radius:8px; transition:var(--transition)}
     .nav-links a:hover{opacity:1; background:var(--bg-soft)}
-    .nav-links .dropdown{position:relative}
-    .dropdown-content{
-      display:none; position:absolute; top:100%; left:0; min-width:200px;
-      background:rgba(16,20,28,.95); backdrop-filter:blur(10px);
-      border:1px solid var(--line); border-radius:12px; padding:8px;
-      margin-top:8px; box-shadow:var(--shadow);
-    }
-    .dropdown:hover .dropdown-content{display:block}
-    .dropdown-content a{display:block; padding:10px 12px; border-radius:8px; margin:2px 0}
-    .dropdown-content a:hover{background:var(--bg-elev)}
-    
+
     /* Mobile navigation */
     .menu-toggle{display:none; background:transparent; border:1px solid var(--line); padding:8px; border-radius:8px; color:var(--text); cursor:pointer}
     @media (max-width: 768px){
@@ -70,7 +61,6 @@
       .nav-links.active{display:flex}
       .nav-links a{padding:12px; border-radius:8px}
       .nav-links a:hover{background:var(--bg-soft)}
-      .dropdown-content{position:static; display:block; background:transparent; border:none; padding-left:20px}
       .menu-toggle{display:block}
     }
 
@@ -82,7 +72,7 @@
                  radial-gradient(650px 280px at 80% 20%, rgba(110,168,255,.30), transparent 60%);
     }
     .hero-grid{display:grid; grid-template-columns:1.15fr .85fr; gap:var(--grid-gap)}
-    @media (max-width: 960px){ 
+    @media (max-width: 960px){
       .hero-grid{grid-template-columns:1fr}
       .hero{padding:40px 0 30px}
       .hero-card{padding:24px}
@@ -106,12 +96,9 @@
     .btn.primary{background:linear-gradient(180deg,#2fd39e,#19b786); border-color:#19b786; color:#0b0f15}
     .btn.primary:hover{filter:saturate(110%)}
 
-    /* LV Silhouette */
-    .lv-stencil{position:absolute; bottom:-2px; right:-6px; width:min(560px, 48vw); opacity:.08}
-
     /* Section */
     section{padding:28px 0 8px}
-    .section-head{display:flex; align-items:baseline; justify-content:space-between; gap:16px; margin:22px 0 10px}
+    .section-head{display:flex; align-items:baseline; justify-content:space-between; gap:16px; margin:22px 0 10px; flex-wrap:wrap}
     .section-title{font-size:20px; letter-spacing:.3px}
     .section-sub{color:var(--muted); font-size:14px}
 
@@ -129,41 +116,45 @@
     .card:hover{background:var(--bg-elev); box-shadow:var(--shadow); translate:0 -2px}
     .card h3{margin:10px 0 8px; font-size:16px}
     .card p{color:var(--muted); margin:0}
+    .card ul{color:var(--muted); margin:10px 0 0; padding-left:18px; line-height:1.6}
+    .card ul li{margin-bottom:4px}
 
     .icon{width:28px; height:28px}
     .icon-wrap{width:44px; height:44px; border-radius:14px; display:grid; place-items:center; background:#0e1724; border:1px solid #1b2740}
 
-    /* Feature rows */
-    .feature-row{display:grid; grid-template-columns:1.2fr .8fr; gap:var(--grid-gap); align-items:stretch}
-    @media (max-width: 960px){ .feature-row{grid-template-columns:1fr} }
+    .price{
+      display:inline-block; margin-top:12px; padding:6px 12px; border-radius:999px;
+      background:#0f1a28; border:1px solid #1b2740; color:var(--brand); font-weight:700; font-size:14px; letter-spacing:.3px
+    }
+    .tier-label{font-size:12px; font-weight:700; letter-spacing:1.2px; text-transform:uppercase; color:var(--brand-2)}
 
     .status-list{display:grid; gap:10px}
     .pill{display:flex; align-items:center; gap:10px; padding:10px 12px; border:1px solid #22324d; background:#0f1726; border-radius:999px; font-size:13px; color:var(--muted)}
-    .dot.good{background:var(--good)} .dot.warn{background:var(--warn)} .dot.bad{background:var(--bad)}
+    .dot.good{background:var(--good)} .dot.warn{background:var(--warn)}
     .dot{width:8px; height:8px; border-radius:50%; box-shadow:0 0 10px rgba(255,255,255,.12)}
 
     /* Stats Section */
     .stats-section{
-      padding:60px 0; 
+      padding:60px 0;
       background:linear-gradient(180deg, rgba(16,20,28,0.5), rgba(20,26,36,0.3));
       border-top:1px solid var(--line);
       border-bottom:1px solid var(--line);
     }
     .stats-grid{
-      display:grid; 
-      grid-template-columns:repeat(4,1fr); 
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
       gap:var(--grid-gap);
     }
     @media (max-width: 768px){.stats-grid{grid-template-columns:repeat(2,1fr)}}
     .stat-card{
-      text-align:center; 
+      text-align:center;
       padding:24px;
     }
     .stat-number{
-      font-size:2.5rem; 
-      font-weight:700; 
+      font-size:2.5rem;
+      font-weight:700;
       background:linear-gradient(135deg, var(--brand), var(--brand-2));
-      -webkit-background-clip:text; 
+      -webkit-background-clip:text;
       -webkit-text-fill-color:transparent;
       margin-bottom:8px;
     }
@@ -171,21 +162,7 @@
 
     /* Footer */
     footer{padding:40px 0 60px; color:#a9b6c7}
-    .foot-grid{
-      display:grid; 
-      grid-template-columns:2fr 1fr 1fr 1fr; 
-      gap:40px; 
-      padding-bottom:30px; 
-      border-bottom:1px solid var(--line);
-      margin-bottom:30px;
-    }
-    @media (max-width: 768px){.foot-grid{grid-template-columns:1fr; gap:30px}}
-    .foot-section h3{font-size:14px; text-transform:uppercase; letter-spacing:1px; color:var(--muted); margin-bottom:12px}
-    .foot-section ul{list-style:none; padding:0; margin:0}
-    .foot-section ul li{margin-bottom:8px}
-    .foot-section ul li a{color:var(--text); opacity:.7; transition:var(--transition)}
-    .foot-section ul li a:hover{opacity:1; color:var(--brand)}
-    .foot{display:flex; gap:16px; flex-wrap:wrap; align-items:center; justify-content:space-between}
+    .foot{display:flex; gap:16px; flex-wrap:wrap; align-items:center; justify-content:space-between; border-top:1px solid var(--line); padding-top:24px; margin-top:24px}
     .tiny{font-size:12px; opacity:.8}
 
     /* Smooth reveal */
@@ -215,19 +192,11 @@
         <h1><a href="index.html">SafePath IT</a></h1>
       </div>
       <div class="nav-links" id="navLinks">
-        <div class="dropdown">
-          <a href="#services">Services ▾</a>
-          <div class="dropdown-content">
-            <a href="services.html">All Services</a>
-            <a href="services.html#msp">MSP Support</a>
-            <a href="services.html#microsoft">Microsoft 365</a>
-            <a href="services.html#security">Security</a>
-          </div>
-        </div>
-        <a href="ai-solutions.html">AI Solutions</a>
-        <a href="cybersecurity.html">Cybersecurity</a>
-        <a href="about.html">About</a>
-        <a href="contact.html" class="btn">Contact</a>
+        <a href="#verticals">Who It's For</a>
+        <a href="#services">Services &amp; Pricing</a>
+        <a href="#security">Security</a>
+        <a href="#how">How I Work</a>
+        <a href="#contact" class="btn">Contact</a>
       </div>
       <button class="menu-toggle" onclick="document.getElementById('navLinks').classList.toggle('active')" aria-label="Menu">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
@@ -243,40 +212,25 @@
     <div class="container hero-grid">
       <div class="hero-card reveal">
         <span class="badge"><span class="dot"></span>Focused scope. Expert execution.</span>
-        <h2>Keep your business productive and secure – with a human you can reach.</h2>
+        <h2>AI and data systems for the businesses that keep the real world running.</h2>
         <p>
-          MSP support, <strong>Microsoft 365 care</strong>, light security checkups, continuous monitoring, and <strong>24/7 response</strong>.
-          We layer practical <strong>AI</strong> on top so small businesses can compete like enterprises – without the overhead.
+          Equipment dealers. Contractors and trades. I've spent <strong>26 years in IT</strong>, hold a
+          <strong>master's degree in cybersecurity</strong> — and I work in <strong>both of your industries</strong>:
+          I build and run AI-powered platforms in the equipment dealer world, and I own a concrete business.
+          Fixed-scope engagements, no hourly meter, and AI leverage that makes small teams compete like big ones.
         </p>
         <div class="cta-row">
-          <a class="btn primary" href="contact.html">Get help now</a>
-          <a class="btn" href="services.html">Explore services</a>
+          <a class="btn primary" href="#contact">Book an assessment</a>
+          <a class="btn" href="#services">See services &amp; pricing</a>
         </div>
-        <!-- Las Vegas skyline stencil -->
-        <svg class="lv-stencil" viewBox="0 0 800 220" preserveAspectRatio="xMaxYMax meet" aria-hidden="true">
-          <path d="M0 200h800v20H0z" fill="#0b0f15"/>
-          <g fill="#ffffff" opacity=".25">
-            <rect x="50" y="150" width="40" height="50" rx="4"/>
-            <rect x="110" y="130" width="30" height="70" rx="4"/>
-            <rect x="160" y="140" width="70" height="60" rx="6"/>
-            <rect x="250" y="120" width="30" height="80" rx="4"/>
-            <rect x="300" y="110" width="60" height="90" rx="6"/>
-            <rect x="380" y="130" width="40" height="70" rx="6"/>
-            <rect x="440" y="100" width="26" height="100" rx="4"/>
-            <rect x="480" y="140" width="70" height="60" rx="6"/>
-            <rect x="570" y="150" width="42" height="50" rx="6"/>
-            <rect x="630" y="130" width="60" height="70" rx="6"/>
-            <rect x="710" y="120" width="26" height="80" rx="4"/>
-          </g>
-        </svg>
       </div>
       <div class="hero-card reveal" style="display:grid; align-content:center; gap:12px">
         <div class="status-list">
-          <div class="pill"><span class="dot good"></span>Monitoring online – all clients</div>
-          <div class="pill"><span class="dot warn"></span>3 devices pending patch – auto-queue tonight</div>
-          <div class="pill"><span class="dot good"></span>Backups verified in last 24h – 100%</div>
-          <div class="pill"><span class="dot bad"></span>1 ISP outage – failover activated</div>
-          <div class="pill"><span class="dot good"></span>AI assistant active in support channels</div>
+          <div class="pill"><span class="dot good"></span>One expert, end to end — no account managers</div>
+          <div class="pill"><span class="dot good"></span>Fixed scope, fixed price — quoted in writing</div>
+          <div class="pill"><span class="dot good"></span>Assessment to roadmap in 2–3 weeks</div>
+          <div class="pill"><span class="dot good"></span>AI agents do the busywork; I make the calls</div>
+          <div class="pill"><span class="dot warn"></span>Deliberately small: a few clients at a time</div>
         </div>
       </div>
     </div>
@@ -287,152 +241,199 @@
     <div class="container">
       <div class="stats-grid">
         <div class="stat-card reveal">
-          <div class="stat-number">99.9%</div>
-          <div class="stat-label">Uptime Guaranteed</div>
+          <div class="stat-number">26+</div>
+          <div class="stat-label">Years in IT — dev, infrastructure, PM, data</div>
         </div>
         <div class="stat-card reveal">
-          <div class="stat-number">24/7</div>
-          <div class="stat-label">Security Monitoring</div>
+          <div class="stat-number">2</div>
+          <div class="stat-label">Industries I work in myself — not just consult for</div>
         </div>
         <div class="stat-card reveal">
-          <div class="stat-number">500+</div>
-          <div class="stat-label">Protected Endpoints</div>
+          <div class="stat-number">M.S.</div>
+          <div class="stat-label">Master's in cybersecurity — security in every engagement</div>
         </div>
         <div class="stat-card reveal">
-          <div class="stat-number">&lt;15min</div>
-          <div class="stat-label">Response Time</div>
+          <div class="stat-number">$0</div>
+          <div class="stat-label">Hourly billing — every engagement is fixed-scope</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Services -->
+  <!-- Verticals -->
+  <section id="verticals" class="container">
+    <div class="section-head">
+      <h2 class="section-title">Who It's For</h2>
+      <div class="section-sub">Two industries. Deep in both. Nothing generic.</div>
+    </div>
+    <div class="grid cols-2">
+      <article class="card reveal">
+        <div class="icon-wrap">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#2fd39e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="17" r="3"/><circle cx="17" cy="17" r="2"/><path d="M10 17h5M4 17V9h6l2 4h7v4h-1"/><path d="M10 9V5h4v4"/></svg>
+        </div>
+        <span class="tier-label">Vertical One</span>
+        <h3>Equipment Dealers &amp; Ag Businesses</h3>
+        <p>
+          I run digital platforms inside the equipment dealer world day to day — AI-powered parts discovery
+          and e-commerce included. I know DMS pain, parts-counter reality, and where dealership data hides.
+        </p>
+        <ul>
+          <li>Parts &amp; inventory discovery — get your catalog found online</li>
+          <li>Dealer ops dashboards — absorption, turns, backlog in one live view</li>
+          <li>Lead &amp; quote automation with a human on approval</li>
+          <li>Integrations the vendors say can't be done</li>
+        </ul>
+      </article>
+      <article class="card reveal">
+        <div class="icon-wrap">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#6ea8ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/><path d="M10 9h1M13 9h1M10 12h1M13 12h1"/></svg>
+        </div>
+        <span class="tier-label">Vertical Two</span>
+        <h3>Construction &amp; Trades — Las Vegas</h3>
+        <p>
+          I own an epoxy &amp; decorative concrete business. I bid work, schedule crews, and chase pay apps —
+          so when we talk job costing, sub coordination, and GC schedules, I'm a peer with a tech background,
+          not a software salesman.
+        </p>
+        <ul>
+          <li>Job costing dashboards — live estimate-vs-actual, readable from your truck</li>
+          <li>Bid &amp; estimate automation — takeoff to proposal, you approve before send</li>
+          <li>Field-to-office capture — photos and voice notes become daily logs and change-order flags</li>
+          <li>Schedule &amp; sub coordination without 40 phone calls</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- Services & Pricing -->
   <section id="services" class="container">
     <div class="section-head">
-      <h2 class="section-title">Core MSP Services</h2>
-      <div class="section-sub">Clear scope. High-touch delivery. Built for SMB.</div>
+      <h2 class="section-title">Services &amp; Pricing</h2>
+      <div class="section-sub">Productized and fixed-scope. Quoted in writing before work starts.</div>
     </div>
-
     <div class="grid cols-3">
       <article class="card reveal">
         <div class="icon-wrap">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#6ea8ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 18 0"/><path d="M21 12v4a3 3 0 0 1-3 3h-2"/><path d="M3 12v4a3 3 0 0 0 3 3h2"/><path d="M7 19v-6"/><path d="M17 19v-6"/></svg>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#6ea8ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
         </div>
-        <h3>Single Point of Contact</h3>
-        <p>One channel for everything – tickets, chat, and vendor coordination end‑to‑end.</p>
+        <span class="tier-label">Step 1 — The Front Door</span>
+        <h3>Assessment</h3>
+        <p>
+          A 2–3 week dig through your systems, data, and process. Where the hours go, where the dollars leak,
+          what's worth fixing first. You get a written, prioritized roadmap — with a fixed price attached to
+          every recommendation.
+        </p>
+        <span class="price">$2,500–5,000</span>
       </article>
-
       <article class="card reveal">
         <div class="icon-wrap">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#2fd39e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></svg>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#2fd39e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L4 17v3h3l5.3-5.3a4 4 0 0 0 5.4-5.4l-2.4 2.4-2.1-.6-.6-2.1 2.1-2.7z"/></svg>
         </div>
-        <h3>Microsoft 365 Care</h3>
-        <p>Licensing, setup, security baseline, user support, Teams & SharePoint best practices.</p>
+        <span class="tier-label">Step 2 — The Fix</span>
+        <h3>Build</h3>
+        <p>
+          One system from the roadmap, delivered: a dashboard, an automation, an integration. Fixed scope,
+          fixed price, acceptance criteria on paper. AI-accelerated delivery means weeks, not quarters.
+        </p>
+        <span class="price">$5,000–15,000</span>
       </article>
-
       <article class="card reveal">
         <div class="icon-wrap">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#6ea8ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 4v6c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V7l7-4z"/></svg>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#6ea8ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a7 7 0 0 1 14 0v1"/><path d="M19 8h3M20.5 6.5v3"/></svg>
         </div>
-        <h3>Light Security Checkups</h3>
-        <p>Quarterly reviews to reduce risk – MFA, patch hygiene, email posture, endpoint health.</p>
-      </article>
-
-      <article class="card reveal">
-        <div class="icon-wrap">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#2fd39e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-        </div>
-        <h3>Monitoring & Alerts</h3>
-        <p>24/7 oversight for devices, servers, networks – proactive remediation, clear reports.</p>
-      </article>
-
-      <article class="card reveal">
-        <div class="icon-wrap">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#6ea8ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
-        </div>
-        <h3>24/7 Response</h3>
-        <p>Real people, real time. Critical issues escalated to senior engineers immediately.</p>
-      </article>
-
-      <article class="card reveal">
-        <div class="icon-wrap">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#2fd39e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l5-5 4 4 4-4 5 5"/><path d="M3 12l5 5 4-4 4 4 5-5"/></svg>
-        </div>
-        <h3>Vendor Liaison</h3>
-        <p>We own the support loop with your vendors – from first contact to confirmed fix.</p>
+        <span class="tier-label">Ongoing</span>
+        <h3>Fractional Advisory</h3>
+        <p>
+          A senior technology partner on retainer: roadmap stewardship, vendor and SaaS decisions, hiring
+          input, and a monthly numbers review. Call me before you sign anything.
+        </p>
+        <span class="price">$2,000–4,000/mo</span>
       </article>
     </div>
-
-    <div style="text-align:center; margin-top:40px">
-      <a href="services.html" class="btn primary">View All Services →</a>
-    </div>
+    <p class="section-sub reveal" style="margin-top:18px; text-align:center">
+      Assessment fees credit 50% toward a build signed within 60 days. No hourly billing, no open-ended
+      engagements, nothing under $1,000 — small scopes get bundled into work that actually moves the needle.
+    </p>
   </section>
 
-  <!-- Security & Continuity -->
+  <!-- Security -->
   <section id="security" class="container">
     <div class="section-head">
-      <h2 class="section-title">Security & Continuity</h2>
-      <div class="section-sub">Practical protection and resilient uptime.</div>
+      <h2 class="section-title">Security — It's Why the Name Is SafePath</h2>
+      <div class="section-sub">Master's-level security expertise, sized and priced for small business.</div>
     </div>
     <div class="grid cols-3">
       <article class="card reveal">
         <div class="icon-wrap">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#6ea8ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="2"/><circle cx="12" cy="12" r="3"/></svg>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#6ea8ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 4v6c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V7l7-4z"/><circle cx="12" cy="11" r="2.5"/><path d="M12 13.5V16"/></svg>
         </div>
-        <h3>Camera Security with AI</h3>
-        <p>Modern surveillance: motion zones, people counts, license plate capture, smart alerts.</p>
+        <span class="tier-label">Assessment Tier</span>
+        <h3>SMB Security Audit</h3>
+        <p>
+          A fixed-scope audit of what actually gets small businesses hurt: MFA coverage, email posture,
+          backup restores that have never been tested, access sprawl, and payment-fraud exposure.
+          Findings ranked by real risk, each with a fixed-price fix attached.
+        </p>
+        <span class="price">$2,500–5,000</span>
       </article>
       <article class="card reveal">
         <div class="icon-wrap">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#2fd39e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10a4 4 0 0 0-7.9-.8A3 3 0 1 0 6 16h11a3 3 0 0 0 1-5.8z"/><path d="M8 17l3 3 3-3"/></svg>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#2fd39e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/><path d="M8 11l2 2 4-4"/></svg>
         </div>
-        <h3>Failover Internet</h3>
-        <p>4G/5G backup links, SD‑WAN options, and emergency loaner kits for rapid on‑site triage.</p>
+        <span class="tier-label">AI Advantage</span>
+        <h3>AI-Assisted Testing</h3>
+        <p>
+          AI makes the thorough version affordable: log and configuration review, policy gap analysis, and
+          phishing simulation at a depth that used to take an enterprise team — with every finding judged
+          and verified by a human with a master's in the field.
+        </p>
       </article>
       <article class="card reveal">
         <div class="icon-wrap">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#6ea8ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 11v6c0 1.7 3.6 3 8 3"/><path d="M20 11v2"/></svg>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#6ea8ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/><path d="M12 14v3"/></svg>
         </div>
-        <h3>Backup & DR</h3>
-        <p>On‑site + cloud backups, regular restores tested, clear recovery objectives.</p>
+        <span class="tier-label">Build Tier</span>
+        <h3>Hardening &amp; Follow-Through</h3>
+        <p>
+          Fixes, not just findings: MFA rollout, tested backup &amp; recovery, email authentication, and
+          payment-change verification workflows — the control that stops the wire-fraud schemes hitting
+          contractors and dealerships alike.
+        </p>
       </article>
     </div>
-    <div style="text-align:center; margin-top:40px">
-      <a href="cybersecurity.html" class="btn">Explore Cybersecurity →</a>
-    </div>
+    <p class="section-sub reveal" style="margin-top:18px; text-align:center">
+      Every build I ship gets a security review as part of the scope — it's not an add-on line item.
+    </p>
   </section>
 
-  <!-- AI Layer -->
-  <section id="ai" class="container">
+  <!-- How I Work -->
+  <section id="how" class="container">
     <div class="section-head">
-      <h2 class="section-title">AI Overlay for SMB</h2>
-      <div class="section-sub">Bolt‑on intelligence across support, documents, and decisions.</div>
+      <h2 class="section-title">How I Work</h2>
+      <div class="section-sub">Agents handle the busywork. An expert makes every call.</div>
     </div>
     <div class="grid cols-3">
       <article class="card reveal">
         <div class="icon-wrap">
           <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#2fd39e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="10" rx="3"/><path d="M8 7V4a4 4 0 0 1 8 0v3"/><circle cx="9" cy="12" r="1"/><circle cx="15" cy="12" r="1"/></svg>
         </div>
-        <h3>Agentic Assistants</h3>
-        <p>Chat/voice helpers that handle routine tasks while keeping a human in the loop.</p>
+        <h3>AI-Accelerated Delivery</h3>
+        <p>I use AI agents daily to monitor projects, summarize status, and draft the routine work. That's why fixed prices land where they do — you're not paying for busywork hours.</p>
       </article>
       <article class="card reveal">
         <div class="icon-wrap">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#6ea8ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 12l9 5 9-5"/></svg>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#6ea8ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 4v6c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V7l7-4z"/><path d="M9 12l2 2 4-4"/></svg>
         </div>
-        <h3>RAG Knowledge</h3>
-        <p>Search your own policies, SOPs, and docs with context‑aware answers.</p>
+        <h3>Human Gate on Everything</h3>
+        <p>Nothing goes out the door — no quote, no automation action, no customer-facing message — without expert review. AI drafts; a 26-year veteran decides.</p>
       </article>
       <article class="card reveal">
         <div class="icon-wrap">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#2fd39e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6M12 16v6M4 12h6M14 12h6"/></svg>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#2fd39e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16"/><path d="M6 16l4-8 3 5 2-3 3 6"/></svg>
         </div>
-        <h3>Productivity Boosters</h3>
-        <p>Automations across M365, Slack/Teams, and email. Fewer clicks, faster outcomes.</p>
+        <h3>Deliberately Small</h3>
+        <p>A few clients at a time, chosen where I can make a real dent. When a project needs more hands, I scale through a vetted development bench — under my direction and my quality gate.</p>
       </article>
-    </div>
-    <div style="text-align:center; margin-top:40px">
-      <a href="ai-solutions.html" class="btn primary">Discover AI Solutions →</a>
     </div>
   </section>
 
@@ -440,81 +441,29 @@
   <section id="contact" class="container">
     <div class="card reveal" style="display:grid; grid-template-columns:1.2fr .8fr; gap:var(--grid-gap); align-items:center">
       <div>
-        <h3 style="margin-top:0">Talk to a real person</h3>
-        <p class="muted">Tell us what's going on. We'll respond fast and get you back on a safe path.</p>
+        <h3 style="margin-top:0">Start with a conversation</h3>
+        <p style="color:var(--muted)">
+          Tell me what's eating your margins or your evenings. If an assessment makes sense, I'll say so and
+          quote it in writing. If it doesn't, I'll tell you that too.
+        </p>
         <div class="cta-row">
-          <a class="btn primary" href="contact.html">Start a Conversation</a>
-          <a class="btn" href="tel:1-800-SAFEPATH">Call Now</a>
+          <!-- TODO: replace with real venture email / scheduling link once the safepathit.com domain question is settled (see CLAUDE.md open items) -->
+          <a class="btn primary" href="mailto:hello@safepathit.com">Email me</a>
         </div>
       </div>
       <div class="status-list">
-        <div class="pill"><span class="dot good"></span>Average first response &lt; 15 minutes</div>
-        <div class="pill"><span class="dot good"></span>24/7 on‑call engineers</div>
-        <div class="pill"><span class="dot good"></span>Las Vegas area onsite support</div>
+        <div class="pill"><span class="dot good"></span>You talk to the person doing the work</div>
+        <div class="pill"><span class="dot good"></span>Written scope &amp; price before anything starts</div>
+        <div class="pill"><span class="dot good"></span>Las Vegas, NV &amp; Central New York</div>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
   <footer class="container">
-    <div class="foot-grid">
-      <div class="foot-section">
-        <div class="brand">
-          <div class="logo" aria-hidden="true">
-            <svg viewBox="0 0 144 144" width="36" height="36">
-              <defs>
-                <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0%" stop-color="#4fd1c5"/>
-                  <stop offset="100%" stop-color="#8b5cf6"/>
-                </linearGradient>
-              </defs>
-              <rect width="144" height="144" rx="28" fill="#0c131a" />
-              <path d="M18 102c30-26 60-3 78-24 8-9 8-21-1-27-23-16-59 12-72-3" fill="none" stroke="url(#g2)" stroke-width="10" stroke-linecap="round"/>
-              <circle cx="33" cy="48" r="5" fill="#f59e0b"/>
-              <circle cx="110" cy="78" r="5" fill="#f59e0b"/>
-            </svg>
-          </div>
-          <strong>SafePath IT</strong>
-        </div>
-        <p style="margin-top:12px; color:var(--muted)">
-          Focused scope. Expert execution.<br>
-          Human-centered MSP with AI overlay for Las Vegas SMBs.
-        </p>
-      </div>
-      <div class="foot-section">
-        <h3>Services</h3>
-        <ul>
-          <li><a href="services.html">MSP Support</a></li>
-          <li><a href="services.html#microsoft">Microsoft 365</a></li>
-          <li><a href="cybersecurity.html">Cybersecurity</a></li>
-          <li><a href="ai-solutions.html">AI Solutions</a></li>
-        </ul>
-      </div>
-      <div class="foot-section">
-        <h3>Company</h3>
-        <ul>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="about.html#team">Our Team</a></li>
-          <li><a href="about.html#partners">Partners</a></li>
-          <li><a href="contact.html#careers">Careers</a></li>
-        </ul>
-      </div>
-      <div class="foot-section">
-        <h3>Contact</h3>
-        <ul>
-          <li><a href="tel:1-800-SAFEPATH">1-800-SAFEPATH</a></li>
-          <li><a href="mailto:hello@safepathit.com">hello@safepathit.com</a></li>
-          <li><a href="contact.html">24/7 Support Portal</a></li>
-          <li>Las Vegas, NV</li>
-        </ul>
-      </div>
-    </div>
     <div class="foot">
-      <div class="tiny">© <span id="y"></span> SafePath IT – Las Vegas, NV • Human‑centered MSP with AI</div>
-      <div class="tiny">
-        <a href="#privacy">Privacy Policy</a> • 
-        <a href="#terms">Terms of Service</a>
-      </div>
+      <div class="tiny">© <span id="y"></span> SafePath IT • Focused scope. Expert execution. • Las Vegas, NV &amp; Central New York</div>
+      <div class="tiny">AI &amp; data systems for equipment dealers and construction trades</div>
     </div>
   </footer>
 
